@@ -1,7 +1,7 @@
 # Flight Booking System
 
 This project is a flight booking system that allows users to search and book flight reservations online. It was created as part of a semester assignment. This project is a part of an all-inclusive travel solution that aims to improve customer experience by combining the purchase of airline tickets with other services like lodging, taxi reservations, and other necessary travel requirements. The goal of this all-encompassing strategy is to make tour planning easier and offer a smooth, practical experience at every step of a customer's journey.
-The backend portion of the project was carried out by my teammate while I got the oppurtunity to dive into front-end development for the project and explore various aspects of html,css and JS (Flight-Booking repo).
+The backend portion of the project was carried out by my teammate while I got the oppurtunity to dive into front-end development for the project and explore various aspects of html,css and JS (Flight-Booking repo: https://github.com/san-k0904/Flight-Booking).
 
 ## Features
 
