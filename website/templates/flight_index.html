@@ -1,0 +1,52 @@
+{% extends "base.html"%} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{url_for('static', filename='css/search_styles.css')}}"
+/>
+{% endblock%} {% block title %}Search Flights{% endblock%} {% block content%}
+<div class="parent">
+  <div class="video-container">
+    <video autoplay muted loop id="background-video">
+      <source
+        src="{{url_for('static', filename='videos/flight.mp4')}}"
+        type="video/mp4"
+      />
+    </video>
+    <div class="searchbox-container">
+      <div class="searchbox">
+        <form id="searchForm" method="POST">
+          <input type="text" id="FROM" name="FROM" placeholder="From" />
+          <input type="text" id="TO" name="TO" placeholder="To" />
+          <label for="Travel_date">Travel Date:</label>
+          <input type="date" id="Travel_date" name="travel_date" />
+          <button type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+    <div class="logo_label">
+      <div class="logo">
+        <img
+          src="{{url_for('static', filename='images/palm-tree.svg')}}"
+          alt="logo image"
+        />
+      </div>
+      <div class="title">
+        <h1>PlanYourTrip</h1>
+      </div>
+    </div>
+    <div class="remaining_nav">
+      <div class="home">
+        <h4><a href="{{url_for('views.home')}}">Home</a></h4>
+      </div>
+      <div class="Booked_Flight">
+        <a href="{{url_for('auth.logout')}}">
+          <h4>Logout</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html"%} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{url_for('static', filename='css/flight_result.css')}}"
+/>
+{% endblock%} {% block title %}Book Flights{% endblock %} {% block content %}
+<div class="parent">
+  <div class="video-container">
+    <video autoplay muted loop id="background-video">
+      <source
+        src="{{url_for('static', filename='videos/flight.mp4')}}"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="navbar">
+      <div class="logo_label">
+        <div class="logo">
+          <img
+            src="{{url_for('static', filename='images/palm-tree.svg')}}"
+            alt="logo image"
+          />
+        </div>
+        <div class="title">
+          <h1>PlanYourTrip</h1>
+        </div>
+      </div>
+      <div class="remaining_nav">
+        <div class="home">
+          <h4><a href="{{url_for('views.home')}}">Home</a></h4>
+        </div>
+        <div class="Booked_Flight">
+          <a href="{{url_for('auth.logout')}}">
+            <h4>Logout</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header">
+      <h2>Flights from {{ to_dest }} to {{ from_dest }} on {{ date }}</h2>
+    </div>
+
+    <div class="result-container-wrapper">
+      {% for flight in available_flights %}
+      <div class="result-container">
+        <div class="result">
+          <div class="detail-id">ID: {{ flight.detail_id }}</div>
+          <div class="time">
+            <p>Time: {{ flight.departure }} - {{ flight.landing }}</p>
+          </div>
+          <div class="airplane-id">
+            <p>{{ flight.flight_id }}</p>
+          </div>
+          <div class="airline-name">
+            <p>{{ flight.airline }}</p>
+          </div>
+          <div class="price">
+            <p>₹{{ flight.price }}</p>
+          </div>
+          <div class="available_seats">
+            <p>Available Seats: {{ flight.available_seats }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="input-container">
+      <form method="POST">
+        <input
+          type="text"
+          id="id-input"
+          name="detail_id"
+          placeholder="Enter ID"
+        />
+        <button type="submit">Book</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

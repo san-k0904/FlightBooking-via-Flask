@@ -1,0 +1,54 @@
+{% extends "base.html"%} {% block head %}
+<style type="text/css">
+  body {
+    background-color: #f0f0f0;
+    background-image: url("{{url_for('static', filename="images/sunset_plane.jpeg")}}");
+    background-size: cover;
+  }
+</style>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{url_for('static', filename='css/login_styles.css')}}"
+/>
+{% endblock%} {% block title %}Login{% endblock%} {% block content%}
+<div class="parent">
+  <div class="login-container">
+    <div class="header">
+      <img
+        src="{{url_for('static', filename='images/login_back_circle.png')}}"
+        alt="login image"
+      />
+    </div>
+    <form id="loginForm" method="POST">
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+      <button type="submit">Login</button>
+      <center>
+        <span>Don't have an account? </span
+        ><a href="/sign-up" id="signup-link" style="display: inline-block"
+          >Sign Up</a
+        >
+      </center>
+    </form>
+  </div>
+  <div class="navbar">
+    <div class="logo_label">
+      <div class="logo">
+        <img
+          src="{{url_for('static', filename='images/palm-tree.svg')}}"
+          alt="logo image"
+        />
+      </div>
+      <div class="title">
+        <h1>PlanYourTrip</h1>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

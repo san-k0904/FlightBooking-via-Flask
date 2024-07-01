@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block head %}
+<style type="text/css">
+  body {
+    background-color: #f0f0f0;
+    background-image: url("{{url_for('static', filename="images/sunset_plane.jpeg")}}");
+    background-size: cover;
+  }
+</style>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{url_for('static', filename='css/signup_styles.css')}}"
+/>
+{% endblock %} {% block title %} Sign Up{% endblock %} {% block content %}
+<div class="parent">
+  <div class="signup-container">
+    <div class="header">
+      <img
+        src="{{url_for('static', filename='images/login_back_circle.png')}}"
+        alt="login image"
+      />
+    </div>
+    <form id="signupForm" method="POST">
+      <input type="text" id="name" name="name" placeholder="Name" />
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <input
+        type="text"
+        id="contact"
+        name="contact"
+        placeholder="Phone Number"
+      />
+      <input
+        type="password"
+        id="password1"
+        name="password1"
+        placeholder="Password (6 or more characters)"
+      />
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        placeholder="Confirm Password"
+      />
+      <button type="submit">Sign up</button>
+      <center>
+        <span>Already have an account? </span
+        ><a href="/" id="login-link" style="display: inline-block">Login</a>
+      </center>
+    </form>
+  </div>
+  <div class="navbar">
+    <div class="logo_label">
+      <div class="logo">
+        <img
+          src="{{url_for('static', filename='images/palm-tree.svg')}}"
+          alt="logo image"
+        />
+      </div>
+      <div class="title">
+        <h1>PlanYourTrip</h1>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

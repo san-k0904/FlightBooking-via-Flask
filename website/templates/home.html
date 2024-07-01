@@ -1,0 +1,64 @@
+{% extends "base.html"%} {% block head %}
+<style type="text/css">
+  body {
+    background-color: #f0f0f0;
+    background-image: url("{{url_for('static', filename="images/sunset_plane.jpeg")}}");
+    background-size: cover;
+  }
+</style>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{url_for('static', filename='css/profile.css')}}"
+/>
+{% endblock%} {% block title %}Profile{% endblock%} {% block content%}
+<div class="parent">
+  <div class="profile-container">
+    <div class="header">
+      <h1>PROFILE</h1>
+    </div>
+    <div class="logout-link">
+      <a href="{{ url_for('auth.logout') }}" class="logout-link">Logout</a>
+    </div>
+    <div class="profile-info">
+      <p><span>Name:</span> {{user['name']}}</p>
+      <p><span>Email:</span> {{user['email']}}</p>
+      <p><span>Contact Details: </span>{{user['contact']}}</p>
+    </div>
+    <div class="booked-flights">
+      <h2>Booked Flights</h2>
+      <div class="scrollable-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Airline</th>
+              <th>Date</th>
+              <th>Departure</th>
+              <th>Landing</th>
+              <th>Flight ID</th>
+              <th>From Destination</th>
+              <th>To Destination</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for flight in booked_flights %}
+            <tr>
+              <td>{{ flight['airline'] }}</td>
+              <td>{{ flight['date'] }}</td>
+              <td>{{ flight['departure'] }}</td>
+              <td>{{ flight['landing'] }}</td>
+              <td>{{ flight['flight_id'] }}</td>
+              <td>{{ flight['from_destination'] }}</td>
+              <td>{{ flight['to_destination'] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <a href="{{ url_for('views.booking') }}" class="book-flight-button"
+        >Book Your Flight</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}
