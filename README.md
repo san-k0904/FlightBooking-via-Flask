@@ -12,7 +12,9 @@ The backend portion of the project was carried out by my teammate while I got th
 
 ## Demo
 
-https://github.com/san-k0904/FlightBooking-using-flask/assets/149009136/2c1c5cae-bbf4-455c-837e-ca892c09e64e
+https://github.com/san-k0904/FlightBooking-via-Flask/assets/149009136/abb91e81-aeb8-456c-b8b3-193fc666d3f8
+
+
 
 ## Tech Stack
 
